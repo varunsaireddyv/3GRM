@@ -1,0 +1,26 @@
+print("Hello guys this is your friend mathaletier!!!")
+print("I'm not fully devoleped (UNDER DEVOLEPMENT) ")
+print("So i have very few oprations")
+print("so let's start with basics")
+print("enter number for addition")
+num1=input("enter your first number for addition =")
+num2=input("enter your second number for addition =")
+add=num1+num2
+print(add)
+print("If your done with addition let's do subtraction")
+num2=input("enter your first number for subtraction =")
+num3=input("enter your second number for subtraction =")
+sub=num2-num3
+print(sub)
+print("now let's go deeper with multiplication")
+num4=input("enter your first number for multiplication =")
+num5=input("enter your second number for multiplication =")
+multiply=num4*num5
+print(multiply)
+print("now i don't have much functions so lets end it with division")
+num6=input("enter your first number for division =")
+num7=input("enter your second number for division =")
+div=num6/num7
+print(div)
+print("so guys this where we rap it up because im still under dovelepment ")
+print("meet you guys next time")
