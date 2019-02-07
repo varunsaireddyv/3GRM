@@ -36,17 +36,42 @@ except sr.UnknownValueError:
 #if staments
 def assistant(command):
 	
-	if 'open email'in command:
+	if 'Open youtube'in command:
 		chrome_path='/user/bin/google-chrome'
-		url='https://www.email.com/r/python'
+		url='https://www.youtube.com'
 		webbrowser.get(chrome_path).open(url)
 		
 		if 'What\'s upp' im command:
 			talktome('Chilln bro')
 		if 'email' in command:
-			talktome('Who is the recipiant')
+			talktome('Who is the recipient')
 			recipient=mycommand()
 			
-			if 'rajesh ,bhumi ,varun' in recipien:
+			if 'Varun' in recipient
 				talktome('What should I say')
 				content=mycommand()
+	
+#init gmail smtp
+mail=smtplib.SMTP('smtp.gmail.com', 587)
+
+#identify the server
+
+mail.ehlo
+
+#encrypt seesion
+mail.starttls()
+#login
+mail.login('username=varunbillas@gmail.com' ,'password=orangefruit')
+
+#sends message
+mail.sendmail('Varun' ,'varunbillas@gmail.com' ,content)
+
+#close connection
+mail.close
+
+talktome('Email has been sent')
+
+talktome('I am ready for your next command')
+
+while True:
+	assistant(mycommand())
