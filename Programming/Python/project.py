@@ -6,7 +6,7 @@ import webbrowser
 
 def talktome(audio):
 	print(audio)
-	tts=gTTs(Text=audio. lang='en')
+	tts=gtts(text=audio ,lang='en')
 	tts.save('audio.mp3')
 	os.system('mpg123 audio.mp3') 
 	
@@ -19,20 +19,19 @@ def mycommand():
 	with sr.microphone() as sourse:
 		print('I am, ready for your next command')
 		r.pause_threshhold = 1
-		r.adjust_for_ambient_noise(sorce.doration=1)
+		#r.adjust_for_ambient_noise(sorce.doration=1)
 		audio=r.listen(source)
 		
 		try:
 			command=r.recognize_google(audio)
-			print('You said' + command)= '/n'
+			print('You said' + mycommand)
 			
-#loop back
-
-except sr.UnknownValueError:
-	assitant(mycommand())
-	
-	return command
-	
+		#loop back
+		except sr.UnknownValueError:
+			assitant(mycommand())
+			
+			return command
+			
 #if staments
 def assistant(command):
 	
@@ -41,13 +40,13 @@ def assistant(command):
 		url='https://www.youtube.com'
 		webbrowser.get(chrome_path).open(url)
 		
-		if 'What\'s upp' im command:
+		if 'What\'s upp' in command:
 			talktome('Chilln bro')
 		if 'email' in command:
 			talktome('Who is the recipient')
 			recipient=mycommand()
 			
-			if 'Varun' in recipient
+			if 'Varun' in recipient:
 				talktome('What should I say')
 				content=mycommand()
 	
