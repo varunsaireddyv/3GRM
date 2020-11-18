@@ -1,6 +1,6 @@
 import tk
 import speedtest as st
-top = tk.__doc__
+top = tk.
 
 speed_test = st.Speedtest()
 speed_test.get_best_server()
