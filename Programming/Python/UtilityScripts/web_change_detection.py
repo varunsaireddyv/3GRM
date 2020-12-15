@@ -24,6 +24,7 @@ while True :
 
     try :
         element = driver.find_element_by_link_text("Join")
+        frequency = 2500 
     except :
         continue 
     else :
