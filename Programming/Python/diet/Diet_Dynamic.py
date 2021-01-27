@@ -1,8 +1,8 @@
 import pandas
 import os
-# print(os.curdir)
+
 orders=[]
-df = pandas.read_csv("/home/sai/Desktop/FoodDataSet.csv")
+df = pandas.read_csv("\\Users\\Harshitha\\Desktop\\varun\\3GRM\\Programming\\diet\\FoodDataSet.csv")
 print(type(orders))
 catageries = df["Food_Category"].unique()
 print(type(catageries[0]))
@@ -31,5 +31,22 @@ for order in orders:
     print(order[12])
     Total_Calories=Total_Calories + order[12]
 print('this is the total amount of calories: ' , Total_Calories)
+if Total_Calories in range(500,700):
+    print('you have have had had a healthy amount of calories for a meal ')
+elif Total_Calories<500 :
 
+    print(str(500-Total_Calories) + ' calories to be added to the next meal')
+    
+else :
+    # CaloriesOverflowQuestion=input('there are bit too much of calories in your diet  do you want to romve a few items?  :')
+    # if CaloriesOverflowQuestion == 'yes' :
+    #     FoodCalorieFinder=Total_Calories-700
+    #     def closest(order, FoodCalorieFinder): 
+      
+    #         return order[min(range(len(order)), key = lambda i: abs(order[i]-FoodCalorieFinder))] 
+    #     print(closest(order, FoodCalorieFinder)) 
+
+
+    Difference_Adder=Total_Calories - 666
+    print(str(Difference_Adder) + ' calories above the required amount for a meal')
     
