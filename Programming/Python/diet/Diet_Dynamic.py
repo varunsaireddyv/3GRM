@@ -2,7 +2,7 @@ import pandas
 import os
 
 orders=[]
-df = pandas.read_csv("\\Users\\Harshitha\\Desktop\\varun\\3GRM\\Programming\\diet\\FoodDataSet.csv")
+df = pandas.read_csv("/home/sai/Desktop/FoodDataSet.csv")
 print(type(orders))
 catageries = df["Food_Category"].unique()
 print(type(catageries[0]))
@@ -38,15 +38,21 @@ elif Total_Calories<500 :
     print(str(500-Total_Calories) + ' calories to be added to the next meal')
     
 else :
-    # CaloriesOverflowQuestion=input('there are bit too much of calories in your diet  do you want to romve a few items?  :')
-    # if CaloriesOverflowQuestion == 'yes' :
-    #     FoodCalorieFinder=Total_Calories-700
-    #     def closest(order, FoodCalorieFinder): 
-      
-    #         return order[min(range(len(order)), key = lambda i: abs(order[i]-FoodCalorieFinder))] 
-    #     print(closest(order, FoodCalorieFinder)) 
+    FoodCalorieFinder=Total_Calories-700
+    CaloriesOverflowQuestion=input('there are bit too much of calories in your diet  do you want to remove a few items?  :')
+    if CaloriesOverflowQuestion == 'yes' :
+        for o in orders :
+            if o.Calories in range(0, FoodCalorieFinder):
+                print(o.Item_Name)
+    else:
+        WeightForEquation=input('then you have to exersize to burn those extra calories give me your weight and ill give you the amount of time to exersize ')
+        PreferenceQuestion=input('would you prefer cyclyng or walking  :' )
+        if PreferenceQuestion == 'walking':
+            Walking_Equetion=2.9*3.5*float(WeightForEquation)/200
+            CaloriesToBurn_float=Walking_Equetion/FoodCalorieFinder
+            CaloriesToBurn_int=int(CaloriesToBurn_float)
+            HoursToBurnCalories=CaloriesToBurn_int/60
+            print('you have to walk for ' + str(HoursToBurnCalories) + ' hours to burn the exsese calories')
 
 
-    Difference_Adder=Total_Calories - 666
-    print(str(Difference_Adder) + ' calories above the required amount for a meal')
-    
+    # print(str(Difference_Adder) + ' calories above the required amount for a meal')
