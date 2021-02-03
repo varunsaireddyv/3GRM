@@ -20,12 +20,19 @@ while a == 1 :
     else :
         Bool_Items=df["Food_Category"]==catageries[int(CatIndex)-1]
         Items=df[Bool_Items]
-        y=1
-        for i in Items['Item_Name'] :
-            print(y, i)
-            y=y+1
-        Item_index=input("please select the item id:\n")
-        orders.append(Items.iloc[int(Item_index)-1, :])
+        
+        while True :
+            y=1
+            print('List of '+ catageries[int(CatIndex)-1])
+            for i in Items['Item_Name'] :
+                print(y, i)
+                y=y+1
+
+            Item_index=input("please select the item id:\n")
+            if Item_index == 'exit':
+                break
+            orders.append(Items.iloc[int(Item_index)-1, :])
+
 Total_Calories=0
 for order in orders:
     print(order[12])
