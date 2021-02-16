@@ -7,8 +7,3 @@ secondperson_introductoin=input('your name:')
 print(secondperson_greetings+secondperson_introductoin)
 
 
-#in statement in strings
-'i' in firstperson_introductoin
-'c' in firstperson_introductoin
-'b' in firstperson_introductoin
-'v' in firstperson_introductoin

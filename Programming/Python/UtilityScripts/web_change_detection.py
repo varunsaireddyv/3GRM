@@ -17,7 +17,7 @@ login_password = driver.find_element_by_name("password")
 login_password.send_keys("varun@2009")
 login_password.send_keys(Keys.ENTER)
 driver.get('https://entrar.in/classroom_creation_crm_new/s_display')
-while True :
+while True :                        
     time.sleep(5)
     search=driver.find_element_by_name('select')
     search.click()
@@ -25,6 +25,10 @@ while True :
     try :
         element = driver.find_element_by_link_text("Join")
         frequency = 2500 
+        duration = 500  
+        for x in range(10):
+            winsound.Beep(frequency, duration)
+        break 
     except :
         continue 
     else :
@@ -34,4 +38,4 @@ while True :
             winsound.Beep(frequency, duration)
         break 
         
-    print(element)
+    # print(element)
