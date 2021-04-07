@@ -1,7 +1,7 @@
 import pandas
 import os
 import sqlite3
-LoginSignupQuestion=input('will you login, signup or use incognito')
+LoginSignupQuestion=input('will you login, signup or use incognito :')
 
 if LoginSignupQuestion == 'sign up':
     first_name=input('please enter your first name ')
@@ -9,19 +9,30 @@ if LoginSignupQuestion == 'sign up':
     age=input('please enter your age ')
     mail=input('please enter your mail id ')
 
-    connection = sqlite3.connect('dietuserdata.db')
+    connection = sqlite3.connect('/home/sai/Desktop/3GRM/Programming/diet/DietDatabase.db')
     cursor= connection.cursor()
     cursor.execute("INSERT INTO UserDataDiet VALUES (:first, :last, :age, :mail)", {'first': first_name, 'last': last_name, 'age': age, 'mail': mail})
-    connection.commit()
     print('your sign up has been completed please awnser this questions in order to customize your menu')
-    user_health_history=input('please enter any medical illness / accidents (recently)')
+    cancerpatient=('do you have cancer yes or no')
+    dt1patient=('do you have diabeties type 1 yes or no :')
+    dt2patient=('do you have diabeties type 2 yes or no :')
+    CHFpatient=('do you have chronic heart stroks yes or no :')
+    kidneypatient=('do you have kidney stones or kidney disease yes or no :')
+    bonebreak=('did you break your bones recently in a ccident yes or no')
+    cursor.execute("INSERT INTO UserDataDiseseas VALUES (:cancer, :dt1, :dt2, :chf, :kidney, :bonebreak, :mail)", {'cancer': cancerpatient, 'dt1': dt1patient, 'chf': CHFpatient, 'kidney': kidneypatient, 'bonebreak': bonebreak, 'mail': mail})
+    connection.commit()
+
+if LoginSignupQuestion == 'login':
+    loginemail=input('use your email to login :' )
+    loginquery='SELECT * FROM UserDataDiseseas WHERE mail=%s'
+    cursor.execute(loginquery, loginemail)
 
 
 
 
 else:
     orders=[]
-    df = pandas.read_csv("\\Users\\Harshitha\\Desktop\\varun\\3GRM\\Programming\\diet\\FoodDataSet.csv")
+    df = pandas.read_csv("/home/sai/Desktop/3GRM/Programming/diet/FoodDataSet.csv")
     print((orders))
     catageries = df["Food_Category"].unique()
     print((catageries[0]))
@@ -68,5 +79,3 @@ else:
 
         Difference_Adder=Total_Calories - 666
         print(str(Difference_Adder) + ' calories above the required amount for a meal')
-
-    
