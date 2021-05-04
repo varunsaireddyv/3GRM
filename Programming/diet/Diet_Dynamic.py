@@ -9,30 +9,30 @@ if LoginSignupQuestion == 'sign up':
     age=input('please enter your age ')
     mail=input('please enter your mail id ')
 
-    connection = sqlite3.connect('/home/sai/Desktop/3GRM/Programming/diet/DietDatabase.db')
+    connection = sqlite3.connect('/home/rajesh/Desktop/3grmvarun/3GRM/Programming/diet/DietDatabase.db')
     cursor= connection.cursor()
     cursor.execute("INSERT INTO UserDataDiet VALUES (:first, :last, :age, :mail)", {'first': first_name, 'last': last_name, 'age': age, 'mail': mail})
-    print('your sign up has been completed please awnser this questions in order to customize your menu')
-    cancerpatient=('do you have cancer yes or no')
-    dt1patient=('do you have diabeties type 1 yes or no :')
-    dt2patient=('do you have diabeties type 2 yes or no :')
-    CHFpatient=('do you have chronic heart stroks yes or no :')
-    kidneypatient=('do you have kidney stones or kidney disease yes or no :')
-    bonebreak=('did you break your bones recently in a ccident yes or no')
-    cursor.execute("INSERT INTO UserDataDiseseas VALUES (:cancer, :dt1, :dt2, :chf, :kidney, :bonebreak, :mail)", {'cancer': cancerpatient, 'dt1': dt1patient, 'chf': CHFpatient, 'kidney': kidneypatient, 'bonebreak': bonebreak, 'mail': mail})
-    connection.commit()
 
+    print('your sign up has been completed please awnser this questions in order to customize your menu')
+    cancerpatient=input('do you have cancer yes or no :')
+    dt1patient=input('do you have diabeties type 1 yes or no :')
+    dt2patient=input('do you have diabeties type 2 yes or no :')
+    CHFpatient=input('do you have chronic heart stroks yes or no :')
+    kidneypatient=input('do you have kidney stones or kidney disease yes or no :')
+    bonebreak=input('did you break your bones recently in a accident yes or no :')
+    cursor.execute("INSERT INTO UserDataDiseseas VALUES (:cancer, :dt1, :dt2, :chf, :kidney, :bonebreak, :mail)", {'cancer': cancerpatient, 'dt1': dt1patient, 'dt2': dt2patient, 'chf': CHFpatient, 'kidney': kidneypatient, 'bonebreak': bonebreak, 'mail': mail})
+    connection.commit()
 if LoginSignupQuestion == 'login':
     loginemail=input('use your email to login :' )
     loginquery='SELECT * FROM UserDataDiseseas WHERE mail=%s'
     cursor.execute(loginquery, loginemail)
-
+    
 
 
 
 else:
     orders=[]
-    df = pandas.read_csv("/home/sai/Desktop/3GRM/Programming/diet/FoodDataSet.csv")
+    df = pandas.read_csv("/home/rajesh/Desktop/3grmvarun/3GRM/Programming/diet/FoodDataSet.csv")
     print((orders))
     catageries = df["Food_Category"].unique()
     print((catageries[0]))
