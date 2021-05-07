@@ -2,6 +2,16 @@ from tkinter import *
 from tkinter import filedialog
 
 
+#button faunctionalitty
+def fileopener():
+    root.filename=filedialog.askopenfile(initialdir='\home', title='select file to import', 
+    filetypes=(('csv files', '*.csv'), ('all files', '*.*')))
+def train():
+    networktrained_3rdstep.config(text='training brain for simulation.....')
+def run():
+    savedmodeltodisk_3rdstep.config(text='running simulation of brain....')    
+
+
 root= Tk()
 # add file text in this line
 FileNameWidget=Label(root, text='step 1: file name')
@@ -33,27 +43,10 @@ networktained_4thstep=Label(root, text='dummy text')
 savedmodeltodisk_4thstep=Label(root, text='dummy text')
 action_resultFoundorNOTfound=Label(root, text='dummy text')
 
-#button faunctionalitty
-def fileopener():
-    root.filename=filedialog.askopenfile(initialdir='\home', title='select file to import', 
-    filetypes=(('csv files', '*.csv'), ('all files', '*.*')))
-
-def train:
-    print('training brain for simulation.....')
-def run:
-    print('running simulation of brain')    
 
 #import buttons
 importfile=Button(root, text='import file', command=fileopener)
 importtarget=Button(root, text='import target')
-
-
-
-
-
-
-
-
 
 
 
