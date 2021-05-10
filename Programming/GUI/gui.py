@@ -14,11 +14,29 @@ def run():
 
 root= Tk()
 # add file text in this line
+networktained_4thsteptextbox=Text(root, height=1, width=20)
+networktrained_3rdsteptextbox=Text(root, height=1, width=20)
+savedmodeltodisk_3rdsteptextbox=Text(root, height=1, width=20)
+savedmodeltodisk_4thsteptextbox=Text(root, height=1, width=20)
+targetcolumnstatus=Text(root, height=1, width=20)
+filestatustextbox=Text(root, height=1, width=20)
+filenametextbox=Text(root, height=1, width=20)
+
+
+networktained_4thsteptextbox.insert(END, 'dummy text')
+networktrained_3rdsteptextbox.insert(END, 'dummy text')
+savedmodeltodisk_3rdsteptextbox.insert(END, 'dummy text')
+savedmodeltodisk_4thsteptextbox.insert(END, 'dummy text')
+targetcolumnstatus.insert(END, 'dummy text')
+filestatustextbox.insert(END, 'dummy text')
+filenametextbox.insert(END, 'dummy text')
+targetcolumntextbox=Text(root, height=1, width=20)
 FileNameWidget=Label(root, text='step 1: file name', justify=LEFT, anchor="w")
 FileNameWidgetDisplay=Label(root, text='dummy text', justify=LEFT, anchor="w")
+targetcolumntextbox.insert(END, 'dummy text')
 #add target column here
 TargetColumnWidget=Label(root, text='step 2: target column')
-TargetColumnWidgetDisplay=Label(root, text='dummy text')
+TargetColumnWidgetDisplay=Label(root, text='test text')
 
 step_3=Label(root, text='step 3: Neural Network Regresser')
 step_3_reggression=Label(root, text='Regression')
@@ -51,34 +69,38 @@ importtarget=Button(root, text='import target')
 
 
 #placement
+filestatustextbox.grid(row=0, column=3)
+targetcolumnstatus.grid(row=1, column=3)
+filenametextbox.grid(row=0, column=1)
+targetcolumntextbox.grid(row=1, column=1)
 step_3.grid(row=2, column=0)
 
 step_3_reggression.grid(row=3, column=0)
 step_3_trainbutton.grid(row=3, column=1)
-networktrained_3rdstep.grid(row=3,column=2)
+networktrained_3rdsteptextbox.grid(row=3,column=2)
 
 
 step_3_pickle.grid(row=4, column=0)
 step_3_runbutton.grid(row=4, column=1)
-savedmodeltodisk_3rdstep.grid(row=4, column=2)
+savedmodeltodisk_3rdsteptextbox.grid(row=4, column=2)
 
 step_4.grid(row=5, column=0)
 step_4_classifier.grid(row=6,column=0)
 step_4_trainbutton.grid(row=6, column=1)
 step_4_runbutton.grid(row=7, column=1)
-networktained_4thstep.grid(row=6, column=2)
-savedmodeltodisk_4thstep.grid(row=7, column=2)
+networktained_4thsteptextbox.grid(row=6, column=2)
+savedmodeltodisk_4thsteptextbox.grid(row=7, column=2)
 placeholder.grid(row=7, column=0)
 
 
 
 FileNameWidget.grid(sticky = W, column=0,row=0)
-FileNameWidgetDisplay.grid(row=0, column=1)
+
 importfile.grid(row=0, column=2)
 
 TargetColumnWidget.grid(sticky = W, row=1, column=0)
-TargetColumnWidgetDisplay.grid(row=1, column=1)
-action_resultFoundorNOTfound.grid(row=1, column=3)
+
+
 importtarget.grid(row=1, column=2)
 
 
