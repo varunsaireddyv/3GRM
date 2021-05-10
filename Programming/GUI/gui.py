@@ -14,8 +14,8 @@ def run():
 
 root= Tk()
 # add file text in this line
-FileNameWidget=Label(root, text='step 1: file name')
-FileNameWidgetDisplay=Label(root, text='dummy text')
+FileNameWidget=Label(root, text='step 1: file name', justify=LEFT, anchor="w")
+FileNameWidgetDisplay=Label(root, text='dummy text', justify=LEFT, anchor="w")
 #add target column here
 TargetColumnWidget=Label(root, text='step 2: target column')
 TargetColumnWidgetDisplay=Label(root, text='dummy text')
@@ -51,15 +51,6 @@ importtarget=Button(root, text='import target')
 
 
 #placement
-FileNameWidget.grid(row=0, column=0)
-FileNameWidgetDisplay.grid(row=0, column=1)
-importfile.grid(row=0, column=2)
-
-TargetColumnWidget.grid(row=1, column=0)
-TargetColumnWidgetDisplay.grid(row=1, column=1)
-action_resultFoundorNOTfound.grid(row=1, column=3)
-importtarget.grid(row=1, column=2)
-
 step_3.grid(row=2, column=0)
 
 step_3_reggression.grid(row=3, column=0)
@@ -78,6 +69,19 @@ step_4_runbutton.grid(row=7, column=1)
 networktained_4thstep.grid(row=6, column=2)
 savedmodeltodisk_4thstep.grid(row=7, column=2)
 placeholder.grid(row=7, column=0)
+
+
+
+FileNameWidget.grid(sticky = W, column=0,row=0)
+FileNameWidgetDisplay.grid(row=0, column=1)
+importfile.grid(row=0, column=2)
+
+TargetColumnWidget.grid(sticky = W, row=1, column=0)
+TargetColumnWidgetDisplay.grid(row=1, column=1)
+action_resultFoundorNOTfound.grid(row=1, column=3)
+importtarget.grid(row=1, column=2)
+
+
 
 
 root.mainloop()
