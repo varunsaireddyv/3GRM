@@ -1,3 +1,4 @@
+import builtins
 from tkinter import *
 from tkinter import filedialog
 
@@ -21,6 +22,25 @@ def itempopup(event):
         quantity_dropdown=OptionMenu(frame, clickedquantity, *quantity)
         quantity_dropdown.pack( )
         dessicionlabel=Label(frame, text=clicedbeverages.get())
+        itempopupcuntinue=Button(frame, text='continue', command=calorielow).pack()
+
+
+def calorielow():
+    for widget in frame.winfo_children():
+        widget.destroy()
+    calorielowsdisplay=Label(frame, text='you dont have enough calories in this meal').pack()       
+    addtocurrentmeal=Button(frame, text='add caliries to this meal').pack()
+    addtonextmeal=Button(frame, text='add calories to next meal ').pack()
+    proceed=Button(frame, text='procced').pack()
+
+
+def caloriehigh():
+    for widget in frame.winfo_children():
+        widget.destroy()
+    caloriehighsdisplay=Label(frame, text='you dont have enough calories in this meal').pack()       
+    removefromcurrentmeal=Button(frame, text='add caliries to this meal').pack()
+    removefromnextmeal=Button(frame, text='add calories to next meal ').pack()
+    proceed=Button(frame, text='procced').pack()  
 
 
 def clear():
@@ -38,8 +58,10 @@ def clear():
 
 def login():
     email_input=Text(frame, height='1',  width='40')
-    email_input.insert(frame, 'enter email for ligin')
+    email_input.insert(END, 'enter email for login')
     email_input.pack()
+
+    
 def signup():
     for widget in frame.winfo_children():
         widget.destroy()
